@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<form id="convert" method="POST">
+    <p><label>Converting from</label>
+        <input type="text" id="currency_from" name="currency_from" placeholder="Enter a currency to convert from">
+    </p>
+    <p><label>Converting to</label>
+        <input type="text" id="currency_to" name="currency_to" placeholder="Enter a currency to convert to">
+    </p>
+    <p><label>Amount</label>
+        <input type="text" id="amount" name="amount" placeholder="Enter the amount of currency">
+    </p>
+    <p>
+        <button action="submit">Submit</button>
+    </p>
+</form>
+
+{% if converted %}
+<p>
+    The result is {{ symbol }}{{ "{:.2f}".format(converted) }}
+</p>
+{% endif %}
+{% endblock %}
